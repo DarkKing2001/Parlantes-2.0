@@ -1,0 +1,26 @@
+{% extends "parlantes/base.html" %}
+
+{%block title %} Eliminar {% endblock%}
+
+{% block content%}
+
+<div id="caja2">
+
+    <h1> Boton eliminar</h1>
+    <br>
+    <br>
+
+    <form action="eliminar_por_nombre" method="post">
+        {% csrf_token %}
+        <label>Ingrese el nombre para eliminar</label>
+        <input type="text" name="nombre">
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Eliminar">
+    </form>
+
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

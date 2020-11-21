@@ -1,0 +1,85 @@
+{% extends "parlantes/base.html" %}
+{% load static %}
+
+{%block title %} Formulario Editar {% endblock%}
+
+{% block content%}
+
+<div id="caja2">
+
+    <h1>Editar Dato de Parlante</h1>
+    <br><br>
+    <form action="actualizar_parlante" method="POST" enctype="multipart/form-data" class="col s12">
+        {% csrf_token %}
+
+        <div class="row">
+
+                <input type="hidden" name="id_parlante" value="{{parlante.id_parlante}}">
+
+                <div class="input-field col s12">
+                  <label>Nombre   :</label><input type="text" name="nombre" value="{{parlante.nombre}}"><br>
+                </div>
+
+                <div class="input-field col s12">
+
+                    <input type="text" name="tipo" value="{{parlante.tipo}}">
+                    <label>Tipo Parlante     :</label>
+                    <!--<label>Tipo   :</label>
+
+                     <select name="tipo" value="{{parlante.tipo}}">
+                         <option value="Seleccionar" disabled>Seleccionar</option>
+                         {% if parlante.tipo == "bazucas" %}
+                             <option value="bazucas" selected>Bazuca</option>
+                         {% else %}
+                             <option value="bazucas">Bazuca</option>
+                         {% endif %}
+
+                         {% if parlante.tipo == "karaoke" %}
+                             <option value="karaoke" selected>Karaoke</option>
+                         {% else %}
+                             <option value="karaoke">Karaoke</option>
+                         {% endif %}
+
+                         {% if parlante.tipo == "parlantes" %}
+                             <option value="parlantes" selected>Parlante</option>
+                         {% else %}
+                             <option value="parlantes">Parlante</option>
+                         {% endif %}
+
+                         {% if parlante.tipo == "cubos" %}
+                             <option value="cubos" selected>Cubo</option>
+                         {% else %}
+                             <option value="cubos">Cubo</option>
+                         {% endif %}
+
+                         {% if parlante.tipo == "deDJ" %}
+                             <option value="deDJ" selected>De DJ</option>
+                         {% else %}
+                             <option value="deDJ">De DJ</option>
+                         {% endif %}
+                     </select>
+                    <br><br>-->
+
+                </div>
+
+                <div class="input-field col s12">
+                    <td><label>Foto     :</label><td>
+                    <br><br>
+                    <input type="file" name="foto" id="id_foto">
+                    {% if parlante.foto %}
+                        <tr><td><p>{{parlante.foto.url }}</p></td></tr>
+                        <tr><td><p><img src="{{parlante.foto.url}}"></p></td></tr>
+                    {% endif %}
+                        <br><br>
+                </div>
+        </div>
+
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Actualizar">
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "parlantes/base.html" %}
+
+{%block title %} Agregar {% endblock%}
+
+{% block content%}
+
+
+<div id="caja2">
+
+        <h1>Agregar Parlante</h1>
+        <br><br>
+
+        <form action="agregar_parlante" method="post" enctype="multipart/form-data" class="col s12">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="nombre">
+                  <label>Nombre     :</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input type="text" name="tipo">
+                  <label>Tipo Parlante     :</label>
+                    <!--<select name="tipo">
+                         <option value="seleccionar" disabled>Seleccionar</option>
+                         <option value="bazucas">Bazuca</option>
+                         <option value="Karaoke">Karaoke</option>
+                         <option value="parlantes">Parlante</option>
+                         <option value="cubos">Cubo</option>
+                         <option value="deDJ">De DJ</option>
+                    </select>
+                    <label>Tipo Parlante</label>
+                    <br><br>-->
+
+                </div>
+
+                <div class="input-field col s12">
+                  <tr><td><label>Foto     :</label><td>
+                  <br><br>
+                  <input type="file" name="foto">
+                </div>
+            </div>
+
+            <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Grabar">
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

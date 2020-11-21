@@ -1,0 +1,26 @@
+{% extends "parlantes/base.html" %}
+
+{%block title %} listado de Parlante {% endblock%}
+
+{% block content%}
+
+<div id="caja2">
+
+    <h1>Listado de Parlante</h1>
+
+    <br><br>
+
+    la cantidad de parlantes es {{ listado | length }} <br> <br>
+
+    {% for parlante in listado %}
+        {{ parlante.nombre}} - {{ parlante.tipo}}
+        <br>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        {% load static %}
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <title> {% block title%}   {% endblock %}</title>
+
+        <meta charset="UTF-8">
+            <!--Import Google Icon Font-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <!--Import materialize.css-->
+            <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}"  />
+
+            <!--<script type="text/JavaScript">
+              $(document).ready(function(){
+                    $('select').formSelect();
+              });
+            </script>-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+    <body id="body2">
+
+        {% if user.get_username == 'franco' %}
+            <div class="navbar-fixed">
+                <nav>
+                    <div id="pestania" class="nav-wrapper">
+                      <a href="menu" class="brand-logo"><i class="large material-icons">radio</i></a>
+                      <ul id="nav-mobil" class="right hide-on-med-and-down">
+                        <li><a href="tipo_parlante">Parlantes</a></li>
+                        <li><a href="agregar">Agregar</a></li>
+                        <li><a href="boton_buscar">Buscar</a></li>
+                        <li><a href="eliminar">Eliminar</a></li>
+                        <li><a href="editar">Modificar</a></li>
+                        <li><a href="listar">Listar</a></li>
+                        <li><a href="/accounts/logout">Cerrar Sesión</a></li>
+                      </ul>
+                    </div>
+                </nav>
+            </div>
+        {% else %}
+            <div class="navbar-fixed">
+                <nav>
+                    <div style="background-color: rgb(111, 163, 33);" class="nav-wrapper">
+                      <a href="menu" class="brand-logo"><i class="large material-icons">radio</i></a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="tipo_parlante">Parlantes</a></li>
+                        <li><a href="/accounts/logout">Cerrar Sesión</a></li>
+                      </ul>
+                    </div>
+                </nav>
+            </div>
+        {% endif %}
+
+        {% block content %}
+
+        {% endblock %}
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
+
+        <script type="text/javascript" src="{%  static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{%  static 'js/scripts.js' %}"></script>
+        {% block javascript%}
+
+        {% endblock%}
+    </body>
+</html>
