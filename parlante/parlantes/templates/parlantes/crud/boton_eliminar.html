@@ -10,10 +10,10 @@
     <br>
     <br>
 
-    <form action="eliminar_por_nombre" method="post">
+    <form action="eliminar_por_codigo" method="post">
         {% csrf_token %}
-        <label>Ingrese el nombre para eliminar</label>
-        <input type="text" name="nombre">
+        <label>Ingrese el codigo para eliminar</label>
+        <input type="text" name="codigo">
         <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Eliminar">
     </form>
 

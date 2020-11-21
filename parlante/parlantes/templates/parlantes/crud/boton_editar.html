@@ -10,10 +10,10 @@
     <br>
     <br>
 
-    <form action="editar_por_nombre" method="post">
+    <form action="editar_por_codigo" method="post">
         {% csrf_token %}
-        <label>Ingrese el Nombre para modificar</label>
-        <input type="text" name="nombre">
+        <label>Ingrese el codigo para modificar</label>
+        <input type="text" name="codigo">
         <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Buscar">
     </form>
 

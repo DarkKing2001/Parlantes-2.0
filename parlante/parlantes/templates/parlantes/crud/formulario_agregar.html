@@ -14,15 +14,21 @@
             {% csrf_token %}
 
             <div class="row">
+
+                <div class="input-field col s12">
+                  <input type="text" name="codigo">
+                  <label>Codigo     :</label>
+                </div>
+
                 <div class="input-field col s12">
                   <input type="text" name="nombre">
                   <label>Nombre     :</label>
                 </div>
 
                 <div class="input-field col s12">
-                  <input type="text" name="tipo">
-                  <label>Tipo Parlante     :</label>
-                    <!--<select name="tipo">
+                  <!--<input type="text" name="tipo">
+                  <label>Tipo Parlante     :</label>-->
+                    <select name="tipo">
                          <option value="seleccionar" disabled>Seleccionar</option>
                          <option value="bazucas">Bazuca</option>
                          <option value="Karaoke">Karaoke</option>
@@ -31,8 +37,7 @@
                          <option value="deDJ">De DJ</option>
                     </select>
                     <label>Tipo Parlante</label>
-                    <br><br>-->
-
+                    <br><br>
                 </div>
 
                 <div class="input-field col s12">

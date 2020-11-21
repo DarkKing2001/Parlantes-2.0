@@ -36,6 +36,7 @@ def agregar(request):
 def agregar_parlante(request):
     print("hola  estoy en agregar_parlante...")
     if request.method == 'POST':
+       mi_codigo = request.POST['codigo']
        mi_nombre = request.POST['nombre']
        mi_tipo   = request.POST['tipo']
        mi_foto   = request.FILES['foto']
@@ -45,6 +46,7 @@ def agregar_parlante(request):
                try:
                    parlante = Parlante()
 
+                   parlante.codigo = mi_codigo
                    parlante.nombre = mi_nombre
                    parlante.tipo = mi_tipo
                    parlante.foto = mi_foto
@@ -70,15 +72,15 @@ def boton_buscar(request):
 
 #decorador
 @login_required
-def buscar_por_nombre(request):
-    print("hola  estoy en buscar_por_rut...")
+def buscar_por_codigo(request):
+    print("hola  estoy en buscar_por_codigo...")
     if request.method == 'POST':
-       mi_nombre = request.POST['nombre']
+       mi_codigo = request.POST['codigo']
 
-       if mi_nombre != "":
+       if mi_codigo != "":
            try:
                parlante = Parlante()
-               parlante = Parlante.objects.get(nombre=mi_nombre)
+               parlante = Parlante.objects.get(codigo=mi_codigo)
                if parlante is not None:
                    print("Parlante=", parlante)
                    context={'parlante': parlante}
@@ -101,16 +103,16 @@ def eliminar(request):
 
 #decorador
 @login_required
-def eliminar_por_nombre(request):
-    print("hola  estoy en eliminar_por_nombre...")
+def eliminar_por_codigo(request):
+    print("hola  estoy en eliminar_por_codigo...")
     if request.method == 'POST':
-       mi_nombre = request.POST['nombre']
+       mi_codigo = request.POST['codigo']
 
-       if mi_nombre != "":
+       if mi_codigo != "":
            try:
                parlante = Parlante()
                #parlante = Parlante.objects.all()
-               parlante = Parlante.objects.get(nombre = mi_nombre)
+               parlante = Parlante.objects.get(codigo = mi_codigo)
                if parlante is not None:
                    print("Parlante=", parlante)
                    parlante.delete()
@@ -133,15 +135,15 @@ def editar(request):
 
 #decorador
 @login_required
-def editar_por_nombre(request):
-    print("hola  estoy en editar_por_nombre...")
+def editar_por_codigo(request):
+    print("hola  estoy en editar_por_codigo...")
     if request.method == 'POST':
-       mi_nombre = request.POST['nombre']
+       mi_codigo = request.POST['codigo']
 
-       if mi_nombre != "":
+       if mi_codigo != "":
            try:
                parlante = Parlante()
-               parlante = Parlante.objects.get(nombre = mi_nombre)
+               parlante = Parlante.objects.get(codigo = mi_codigo)
                if parlante is not None:
                    print("Parlante=", parlante)
                    context={'parlante': parlante}
@@ -162,6 +164,7 @@ def actualizar_parlante(request):
     if request.method == 'POST':
 
        mi_id     = request.POST['id_parlante']
+       mi_codigp = request.POST['codigo']
        mi_nombre = request.POST['nombre']
        mi_tipo   = request.POST['tipo']
        mi_foto   = request.FILES['foto']
@@ -172,6 +175,7 @@ def actualizar_parlante(request):
                    parlante = Parlante()
 
                    parlante.id_parlante = mi_id
+                   parlante.codigo = mi_codigp
                    parlante.nombre = mi_nombre
                    parlante.tipo = mi_tipo
                    parlante.foto = mi_foto
