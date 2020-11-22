@@ -22,10 +22,19 @@ from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from rest_framework import routers
+from quickstart import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
 urlpatterns = [
     path('parlantes/', include('parlantes.urls')),
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'registration',
     'parlantes',
 ]
@@ -150,3 +151,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/parlantes/menu'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
