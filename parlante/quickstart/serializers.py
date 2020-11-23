@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from parlantes.models import Parlante
 from rest_framework import serializers
 
 
@@ -12,3 +13,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+class ParlanteSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Parlante
+        fields = ['id_parlante', 'codigo', 'nombre', 'tipo', 'foto']

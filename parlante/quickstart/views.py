@@ -3,9 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.contrib.auth.models import User, Group
+from parlantes.models import Parlante
 from rest_framework import viewsets
 from rest_framework import permissions
-from quickstart.serializers import UserSerializer, GroupSerializer
+from quickstart.serializers import UserSerializer, GroupSerializer, ParlanteSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -23,4 +24,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ParlanteViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Parlante.objects.all()
+    serializer_class = ParlanteSerializer
     permission_classes = [permissions.IsAuthenticated]
