@@ -17,4 +17,5 @@ urlpatterns = [
     path('actualizar_parlante', views.actualizar_parlante, name='actualizar_parlante'),
     path('listar', views.listar, name='listar'),
     path('mostrar_parlantes', views.mostrar_parlantes, name='mostrar_parlantes'),
+    path('api', views.api, name='api'),
 ]

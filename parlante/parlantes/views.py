@@ -204,3 +204,8 @@ def mostrar_parlantes(request):
     lista = Parlante.objects.filter(tipo = 'bazucas')
     context={'listado' : lista}
     return render(request, 'parlantes/crud/listar_parlantes.html', context)
+
+def api(request):
+    print("ok, estamos en la vista api")
+    context={}
+    return render(request, 'parlantes/youtubeApi.html', context)
