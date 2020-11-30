@@ -1,0 +1,42 @@
+{
+  "name": "parlanten PWA",
+  "short_name": "Ironman", 
+  "start_url": "/parlante/parlntes/templates/parlantes/index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple Parlante PWA.",
+  "dir": "ltr",
+  "lang": "en-US",  
+  
+  "icons": [
+    {
+      "src": "imagenes/par1",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "imagenes/par2",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "imagenes/par3",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "imagenes/par4",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "imagenes/par5",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "splash_pages": null 
+}

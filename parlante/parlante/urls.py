@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include('pwa.urls'))
+    path('', include('pwa.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
