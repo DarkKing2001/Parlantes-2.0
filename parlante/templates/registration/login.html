@@ -6,7 +6,7 @@
   {% csrf_token %}
   {{ form.as_p }}
 
-  <input type="submit" value="{% trans 'Iniciar sesion' %}" />
+  <!--<input type="submit" value="{% trans 'Iniciar sesion' %}" />-->
   <input type="hidden" name="next" value="{{ next }}" />
 
   <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
