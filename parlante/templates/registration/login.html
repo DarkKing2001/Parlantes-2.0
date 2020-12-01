@@ -10,6 +10,8 @@
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
+<a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
+
 <p>{% trans "Has olvidado tu contrasena" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!</p>
 <p>{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!</p>
 {% endblock %}
