@@ -8,9 +8,12 @@
 
   <input type="submit" value="{% trans 'Iniciar sesion' %}" />
   <input type="hidden" name="next" value="{{ next }}" />
+
+  <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
+          <a href="{% url 'social:begin' 'facebook' %}">Login con Facebook</a>
 </form>
 
-<a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
+
 
 <p>{% trans "Has olvidado tu contrasena" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!</p>
 <p>{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!</p>

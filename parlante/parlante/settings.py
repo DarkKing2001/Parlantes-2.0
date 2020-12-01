@@ -28,9 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1082486868858613'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'ec1a40ef95bf0b4ef869f558b44eb158'
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -170,3 +167,6 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1082486868858613'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ec1a40ef95bf0b4ef869f558b44eb158'
